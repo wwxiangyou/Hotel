@@ -21,6 +21,12 @@ public class EnterActivity extends TabActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_enter);
 
+        if(true){
+            Intent intent;
+            intent = new Intent().setClass(EnterActivity.this, VerifyLockActivity.class);
+            startActivity(intent);
+        }
+
         tabHost = this.getTabHost();
 
         TabHost.TabSpec spec;
@@ -34,7 +40,6 @@ public class EnterActivity extends TabActivity {
         intent=new Intent().setClass(this, ProfileActivity.class);
         spec=tabHost.newTabSpec("我").setIndicator("我").setContent(intent);
         tabHost.addTab(spec);
-
         RadioGroup radioGroup=(RadioGroup) this.findViewById(R.id.main_tab_group);
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
