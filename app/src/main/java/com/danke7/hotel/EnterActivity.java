@@ -35,7 +35,7 @@ public class EnterActivity extends TabActivity {
         intent=new Intent().setClass(this, OrderActivity.class);
         spec=tabHost.newTabSpec("订单").setIndicator("订单").setContent(intent);
         tabHost.addTab(spec);
-        intent=new Intent().setClass(this, ProfileActivity.class);
+        intent=new Intent().setClass(this, UserInfoActivity.class);
         spec=tabHost.newTabSpec("我").setIndicator("我").setContent(intent);
         tabHost.addTab(spec);
         RadioGroup radioGroup=(RadioGroup) this.findViewById(R.id.main_tab_group);

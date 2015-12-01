@@ -74,6 +74,10 @@
         <activity android:name=".BookRoomActivity"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
+        <activity android:name=".UserInfoActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
     </application>
+
 
 </manifest>
