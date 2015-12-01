@@ -8,6 +8,12 @@
     <string name="title_activity_verify_lock">VerifyLockActivity</string>
     <string name="title_activity_login">LoginActivity</string>
 
+    <string name="title_activity_main_screen">MainScreenActivity</string>
+
+    <string name="search_message">输入酒店名称</string>
+    <string name="button_send">搜索</string>
+    <string name="me">登录</string>
+
     <!-- Gesture code starting -->
     <string name="setup_gesture_code">设置手势密码</string>
     <string name="setup_gesture_pattern">绘制解锁图案</string>

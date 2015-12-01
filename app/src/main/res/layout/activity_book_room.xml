@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.example.tiankuo.order.BookRoomActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="酒店名："
+        android:id="@+id/textViewstaticHN"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="0dp"
+        android:textSize="20dp" />
+
+    <Spinner
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:id="@+id/spinnerRoomType"
+        android:layout_toEndOf="@+id/textViewstaticRT"
+        android:scrollIndicators="right"
+        android:layout_below="@+id/textViewHotelName"
+        android:textSize="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="房间价格："
+        android:id="@+id/textViewstaticRP"
+        android:layout_below="@+id/textViewstaticRT"
+        android:layout_alignParentStart="true"
+        android:textSize="20dp"
+        android:textIsSelectable="false"
+        android:textAlignment="center" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:id="@+id/textViewHotelName"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/textViewstaticHN"
+        android:textAlignment="center"
+        android:textSize="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewRoomPrice"
+        android:layout_alignTop="@+id/textViewstaticRP"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/textViewstaticRP"
+        android:textAlignment="center"
+        android:layout_alignBottom="@+id/textViewstaticRP"
+        android:textSize="20dp"
+        android:hint="请选择房间类型" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="房间类型："
+        android:id="@+id/textViewstaticRT"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textViewHotelName"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="入住天数："
+        android:id="@+id/textViewstaticNN"
+        android:layout_below="@+id/textViewstaticRP"
+        android:layout_alignParentStart="true"
+        android:textSize="20dp"
+        android:textIsSelectable="false"
+        android:textAlignment="center"
+        android:layout_marginTop="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="房间数量："
+        android:id="@+id/textViewstaticRN"
+        android:layout_below="@+id/textViewstaticNN"
+        android:layout_alignParentStart="true"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        android:layout_marginTop="20dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="添加房间"
+        android:id="@+id/buttonAdd"
+        android:layout_below="@+id/textViewstaticRN"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="15dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="删除房间"
+        android:id="@+id/buttonDelete"
+        android:layout_alignTop="@+id/buttonAdd"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="60dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="取消预订"
+        android:id="@+id/buttonCancel"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="60dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="确认预订"
+        android:id="@+id/buttonConfirm"
+        android:layout_alignTop="@+id/buttonCancel"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="60dp" />
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/listViewBook"
+        android:layout_below="@+id/buttonAdd"
+        android:layout_alignEnd="@+id/textViewHotelName"
+        android:layout_above="@+id/buttonCancel"
+        android:layout_marginTop="15dp"
+        style="@style/Base.Theme.AppCompat.Light" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:id="@+id/editTextNightNumber"
+        android:textSize="20dp"
+        android:hint="请输入入住天数"
+        android:inputType="number"
+        android:layout_marginRight="30dp"
+        android:layout_toEndOf="@+id/buttonAdd"
+        android:layout_below="@+id/textViewRoomPrice"
+        android:layout_above="@+id/textViewstaticRN" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:id="@+id/editTextRoomNumber"
+        android:layout_above="@+id/buttonAdd"
+        android:textSize="20dp"
+        android:hint="请输入房间数量"
+        android:layout_marginRight="30dp"
+        android:layout_alignEnd="@+id/listViewBook"
+        android:inputType="number"
+        android:layout_alignStart="@+id/editTextNightNumber"
+        android:layout_below="@+id/textViewstaticNN" />
+
+</RelativeLayout>
