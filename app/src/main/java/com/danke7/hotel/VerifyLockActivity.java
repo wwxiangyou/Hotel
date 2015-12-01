@@ -83,7 +83,7 @@ public class VerifyLockActivity extends Activity implements android.view.View.On
                     @Override
                     public void checkedSuccess() {
                         mGestureContentView.clearDrawlineState(0L);
-                        Toast.makeText(VerifyLockActivity.this, "密码正确", 1000).show();
+                        Toast.makeText(VerifyLockActivity.this, "密码正确", Toast.LENGTH_SHORT).show();
                         VerifyLockActivity.this.finish();
                     }
 

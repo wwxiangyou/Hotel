@@ -15,6 +15,8 @@ import android.view.MenuItem;
 import android.widget.RadioGroup;
 import android.widget.TabHost;
 
+import cn.smssdk.SMSSDK;
+
 public class EnterActivity extends TabActivity {
     private TabHost tabHost;
 
@@ -23,23 +25,11 @@ public class EnterActivity extends TabActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_enter);
 
-        Context ctx = EnterActivity.this;
-        SharedPreferences sp = ctx.getSharedPreferences("SP", MODE_WORLD_READABLE);
-        //存入数据
-        SharedPreferences.Editor editor = sp.edit();
-        editor.commit();
-
-        if(sp.getBoolean("SET_LOCK", false) ){
-            Intent intent;
-            intent = new Intent().setClass(EnterActivity.this, VerifyLockActivity.class);
-            startActivity(intent);
-        }
-
         tabHost = this.getTabHost();
 
         TabHost.TabSpec spec;
         Intent intent;
-        intent=new Intent().setClass(this, SearchActivity.class);
+        intent=new Intent().setClass(this, MainScreenActivity.class);
         spec=tabHost.newTabSpec("酒店").setIndicator("酒店").setContent(intent);
         tabHost.addTab(spec);
         intent=new Intent().setClass(this, OrderActivity.class);
@@ -68,5 +58,16 @@ public class EnterActivity extends TabActivity {
                 }
             }
         });
+        Context ctx = EnterActivity.this;
+        SharedPreferences sp = ctx.getSharedPreferences("SP", MODE_WORLD_READABLE);
+        //存入数据
+        SharedPreferences.Editor editor = sp.edit();
+        editor.commit();
+
+        if(sp.getBoolean("SET_LOCK", false) ){
+            Intent intent2;
+            intent2 = new Intent().setClass(EnterActivity.this, VerifyLockActivity.class);
+            startActivity(intent2);
+        }
     }
 }
