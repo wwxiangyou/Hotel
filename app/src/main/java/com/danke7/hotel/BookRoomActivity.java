@@ -153,8 +153,7 @@ public class BookRoomActivity extends AppCompatActivity {
                 builder.setPositiveButton("确认", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Intent intent=new Intent(BookRoomActivity.this,MainScreenActivity.class);
-                        startActivity(intent);
+                        BookRoomActivity.this.finish();
                     }
                 });
                 builder.show();

@@ -2,8 +2,10 @@ package com.danke7.hotel;
 
 import com.danke7.hotel.R;
 import android.app.Activity;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Html;
 import android.text.TextUtils;
@@ -81,6 +83,14 @@ public class SetLockActivity extends Activity implements OnClickListener {
                     if (inputCode.equals(mFirstPassword)) {
                         Toast.makeText(SetLockActivity.this, "设置成功", Toast.LENGTH_SHORT).show();
                         mGestureContentView.clearDrawlineState(0L);
+
+                        //设置锁已启用
+                        Context ctx = SetLockActivity.this;
+                        SharedPreferences sp = ctx.getSharedPreferences("SP",MODE_WORLD_READABLE);
+                        SharedPreferences.Editor editor = sp.edit();
+                        editor.putBoolean("SET_LOCK", true);
+                        editor.commit();
+
                         SetLockActivity.this.finish();
                     } else {
                         mTextTip.setText(Html.fromHtml("<font color='#c70c1e'>与上一次绘制不一致，请重新绘制</font>"));

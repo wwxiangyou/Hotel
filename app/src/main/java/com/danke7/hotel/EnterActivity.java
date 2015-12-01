@@ -1,7 +1,9 @@
 package com.danke7.hotel;
 
 import android.app.TabActivity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -21,7 +23,13 @@ public class EnterActivity extends TabActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_enter);
 
-        if(true){
+        Context ctx = EnterActivity.this;
+        SharedPreferences sp = ctx.getSharedPreferences("SP", MODE_WORLD_READABLE);
+        //存入数据
+        SharedPreferences.Editor editor = sp.edit();
+        editor.commit();
+
+        if(sp.getBoolean("SET_LOCK", false) ){
             Intent intent;
             intent = new Intent().setClass(EnterActivity.this, VerifyLockActivity.class);
             startActivity(intent);
