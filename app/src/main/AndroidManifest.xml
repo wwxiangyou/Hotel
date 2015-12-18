@@ -77,6 +77,16 @@
         <activity android:name=".UserInfoActivity"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
+
+        <activity android:name=".FeedBackActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity android:name=".OrderInfoActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity android:name=".OrderManagementActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
     </application>
 
 
